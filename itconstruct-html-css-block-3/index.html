@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link href="./assets/css/styles.css" rel="stylesheet">
+    <title>Title</title>
+</head>
+<body>
+<header>
+    <div><img src="cat_energy.jpg" alt="Cat energy"></div>
+    <div>Форма отзыва</div>
+</header>
+<div>
+    <main>
+        <form action="#" method="post">
+            <fieldset>
+                <legend>Личные данные</legend>
+                <table>
+                    <tbody>
+                    <tr>
+                        <th>
+                            <label for="input_id">ID отзыва</label>
+                        </th>
+                        <th>
+                            <label for="input_name">Имя путешественника</label>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="number" name="id" value="12345" disabled id="input_id" required>
+                        </td>
+                        <td>
+                            <input type="text" name="name" value="Кекс" id="input_name" pattern="[a-zA-Zа-яА-Я ]+"
+                                   required>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+            <fieldset>
+                <legend>Отзыв о поездке</legend>
+                <table>
+                    <tbody>
+                    <tr>
+                        <th><label for="input_country">Страна визита</label></th>
+                        <th><label for="input_city">Город</label></th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="country" value="Норвегия" id="input_country"
+                                   pattern="[a-zA-Zа-яА-Я -]+" required></td>
+                        <td>
+                            <select id="input_city" name="city" required>
+                                <option value="Oslo">Осло</option>
+                                <option value="Helsinki">Хельсинки</option>
+                                <option value="Tokyo">Токио</option>
+                                <option value="Berlin">Берлин</option>
+                                <option value="Denver">Денвер</option>
+                                <option value="Nairobi">Найроби</option>
+                                <option value="Moscow">Москва</option>
+                                <option value="Rio">Рио-Де-Жанейро</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="input_rating">Оценка поездки</label></th>
+                        <td><input type="number" name="rating" min="0" max="10" value="10" id="input_rating" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>0</span>
+                            <input type="range" onchange="changeRatingNumber(this.value)" id="input_rating_slider" min="0" max="10" step="1" value="10">
+                            <span>10</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="input_review">Текст отзыва</label></th>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><textarea rows="5" name="review" required
+                                                  id="input_review">Это было просто мяу!</textarea></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+            <fieldset>
+                <legend>Оценка отеля</legend>
+                <table>
+                    <tbody>
+                    <tr>
+                        <th><label for="input_hotel">Название отеля</label></th>
+                        <th><label for="input_date">Дата въезда</label></th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="hotel" placeholder="Название по-английски" id="input_hotel"
+                                   pattern="[a-zA-Z ]+"
+                                   required></td>
+                        <td><input type="date" name="date" placeholder="В формате дд-мм-гггг" id="input_date" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="input_color">Цвет кроватки</label></th>
+                        <th><label for="input_dinner">Оценка обедов</label></th>
+                    </tr>
+                    <tr>
+                        <td><input type="color" name="color" id="input_color" value="#ff0000"></td>
+                        <td>
+                            <select name="rating_score" id="input_dinner">
+                                <option value="3">Подушечки оближешь</option>
+                                <option value="2">Средне</option>
+                                <option value="1">Не очень</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="input_fish">Самая вкусная рыба</label></th>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <select id="input_fish" name="fishes" multiple size="6">
+                                <option selected value="salmon">Норвежский лосось</option>
+                                <option value="catfish">Зубатка</option>
+                                <option selected value="perch">Морской окунь</option>
+                                <option value="carp">Карась</option>
+                                <option value="mirror_carp">Зеркальный карп</option>
+                            </select>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </fieldset>
+            <div>
+                <span><input type="submit" value="Оценить"></span>
+                <span><input type="reset" value="Сбросить"></span>
+            </div>
+        </form>
+    </main>
+</div>
+<footer>
+    <div>
+        <img src="cat.jpg" alt="Кекс">
+    </div>
+    <div>
+        <span>Кекс,</span>
+        <span><a href="mailto:keks@htmlacademy.ru">keks@htmlacademy.ru</a></span>
+    </div>
+    <div>
+        <span>© 2008—2014</span>
+        <span><a href="#">Cat Energy</a></span>
+    </div>
+</footer>
+<script src="./assets/js/script.js"></script>
+</body>
+</html>

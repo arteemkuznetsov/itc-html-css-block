@@ -1,0 +1,68 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+}
+
+body {
+    min-width: 550px;
+    min-height: 250px;
+    padding: 10px;
+}
+
+.cards {
+    position: relative;
+    width: 380px;
+    text-align: left;
+}
+
+.cards li {
+    width: 37px;
+    height: 55px;
+}
+
+.cards li::before {
+    font-family: "Courier", monospace;
+}
+
+/* сдвигаем все карточки кроме первой влево так, чтобы они помещались в одну строку */
+.cards li:not(:first-child) {
+    margin-left: -20px;
+}
+
+.cards:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    width: 37px;
+    height: 55px;
+    border: 1px dashed #33bb33;
+    border-radius: 5px;
+}
+
+/* 1, 5, 9, 13 */
+.cards li:nth-child(4n + 1) {
+    background-color: #ffcc33;
+}
+
+/* 2, 6, 10 во всех рядах, кроме 1 */
+.cards:not(:first-of-type) li:nth-child(4n + 2) {
+    background-color: #0099ff;
+}
+
+/* 4, 8, 12 в рядах, кратных 2 */
+.cards:nth-of-type(2n) li:nth-child(4n) {
+    background-color: #ff3300;
+}
+
+/* 8, 11 в 3 ряду */
+.cards:nth-of-type(3) li:nth-child(3n + 8) {
+    background-color: #339933;
+}
+
+.cards:first-of-type li:nth-child(2n) {
+    background-color: #996666;
+}

@@ -1,0 +1,117 @@
+body {
+    width: 550px;
+}
+
+form {
+    width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px #cccccc;
+}
+
+fieldset {
+    padding: 10px;
+    border: 1px solid #34495e;
+    border-radius: 5px;
+}
+
+fieldset legend {
+    color: #34495e;
+}
+
+.half-width {
+    display: inline-block;
+    width: 50%;
+    margin-right: -4px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+/* скрываем настоящие элементы */
+input[type="radio"],
+input[type="checkbox"] {
+    display: none;
+}
+
+/* стилизуем следующие за ними лейблы */
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+    vertical-align: middle;
+    color: #7f8c8d;
+}
+
+/* стилизуем псевдоэлементы перед текстом в лейбле как настоящие элементы */
+input[type="radio"] + label::before,
+input[type="checkbox"] + label::before {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-right: 8px;
+    vertical-align: middle;
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 0 3px #bdc3c7;
+}
+
+/* закругляем псевдорадиокнопки */
+input[type="radio"] + label::before {
+    border-radius: 50%;
+}
+
+/* закрашиваем псевдоэлементы, если элементы, с которыми они связаны, нажаты */
+input[type="radio"]:checked + label::before,
+input[type="checkbox"]:checked + label::before {
+    background: #1abc9c;
+    box-shadow: 0 0 0 3px #1abc9c;
+}
+
+/* а также закрашиваем текст лейблов */
+input[type="radio"]:checked + label,
+input[type="checkbox"]:checked + label {
+    color: #1abc9c;
+}
+
+/* для неактивных аналогично */
+input[type="radio"]:disabled + label::before,
+input[type="checkbox"]:disabled + label::before {
+    box-shadow: 0 0 0 3px #ecf0f1;
+}
+
+input[type="radio"]:disabled + label,
+input[type="checkbox"]:disabled + label {
+    color: #ecf0f1;
+}
+
+/* здесь стилизуем непосредственно сам элемент и все его состояния, которые представлены псевдоэлементами */
+input[type="text"] {
+    width: 95%;
+    height: 24px;
+    margin-bottom: 10px;
+    padding: 2px 5px;
+    color: #000;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+
+input[type="text"]:required {
+    border-color: #e74c3c;
+}
+
+input[type="text"]:disabled {
+    color: #bdc3c7;
+    background: #f5f5f5;
+    border-color: #ecf0f1;
+}
+
+input[type="text"]:invalid {
+    color: #c0392b;
+    background: #f2a097;
+    border-color: #e74c3c;
+}
